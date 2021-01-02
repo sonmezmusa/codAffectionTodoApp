@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha512-0S+nbAYis87iX26mmj/+fWt1MmaKCv80H+Mbo+Ne7ES4I6rxswpfnC6PxmLiw33Ywj2ghbtTw0FkLbMWqh4F7Q==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'todos/style.css' %}">
 </head>
 <body class="bg-light">
 
@@ -19,7 +21,19 @@
                         <h1 class="display-5 text-info"><i class="fas fa-check-double"></i> Todos</h1>
                     </div>
                     <div class="card-body">
-                    
+                        <form action="{% url 'insert_todo_item' %}" method="POST" autocomplete="off">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="content">
+                                <div class="input-group-append text-info">
+                                    <span class="input-group-text bg-white py-0">
+                                        <button type="submit" class="btn btn-sm text-info">
+                                            <i class="fa fa-plus-circle fa-lg"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
