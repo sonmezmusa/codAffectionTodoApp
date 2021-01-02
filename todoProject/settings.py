@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'todos',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +77,16 @@ WSGI_APPLICATION = 'todoProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'TodoDB',
+        'USERNAME': 'postgres',
+        'PASSWORD': 'test123',
     }
 }
+# 'HOST': 'localhost',
+# >postgres@musaUbuntu:~$ createuser --interactive 
+# Enter name of role to add: musa
+# Shall the new role be a superuser? (y/n) y
 
 
 # Password validation
