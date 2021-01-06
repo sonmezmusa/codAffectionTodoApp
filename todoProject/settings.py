@@ -75,14 +75,25 @@ WSGI_APPLICATION = 'todoProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'TodoDB',
-        'USERNAME': 'postgres',
-        'PASSWORD': 'test123',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'TodoDB',
+#         'USERNAME': 'postgres',
+#         'PASSWORD': 'test123',
+#     }
+# }
 # 'HOST': 'localhost',
 # >postgres@musaUbuntu:~$ createuser --interactive 
 # Enter name of role to add: musa
